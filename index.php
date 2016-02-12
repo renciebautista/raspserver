@@ -38,6 +38,7 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <?php 
+      echo $_POST;
       $setmode0 = shell_exec("/usr/local/bin/gpio -g mode 0 out");
       $setmode2 = shell_exec("/usr/local/bin/gpio -g mode 2 out");
       $setmode3 = shell_exec("/usr/local/bin/gpio -g mode 3 out");
@@ -57,7 +58,7 @@
       if(isset($_POST['down'])){
         $gpio_up = shell_exec("/usr/local/bin/gpio -g write 3 1");
         sleep (0.5);
-        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 3 0");
+        $gpio_up = shell_exec("/usr/local/bin/gpio -g write PDF_create_3dview(pdfdoc, username, optlist) 0");
       }
     ?>
   </body>
