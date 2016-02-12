@@ -39,9 +39,9 @@
 
     <?php 
       if(isset($_POST['btn-cmd'])){
-        echo '<pre>';
-        echo print_r($_POST);
-        echo '</pre>';
+        // echo '<pre>';
+        // echo print_r($_POST);
+        // echo '</pre>';
 
         $setmode0 = shell_exec("/usr/local/bin/gpio -g mode 0 out");
         $setmode2 = shell_exec("/usr/local/bin/gpio -g mode 2 out");
@@ -51,18 +51,21 @@
           $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 1");
           sleep (0.5);
           $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 0");
+          echo 'up';
         }
 
         if($_POST['btn-cmd'] == "stop"){
           $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 1");
           sleep (0.5);
           $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 0");
+          echo 'stop';
         }
 
         if($_POST['btn-cmd'] == "down"){
           $gpio_up = shell_exec("/usr/local/bin/gpio -g write 3 1");
           sleep (0.5);
           $gpio_up = shell_exec("/usr/local/bin/gpio -g write PDF_create_3dview(pdfdoc, username, optlist) 0");
+          echo 'down';
         }
       }
       
