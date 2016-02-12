@@ -39,7 +39,7 @@
 
     <?php 
       echo '<pre>';
-      echo $_POST;
+      echo print_r(_POST);
        echo '</pre>';
       $setmode0 = shell_exec("/usr/local/bin/gpio -g mode 0 out");
       $setmode2 = shell_exec("/usr/local/bin/gpio -g mode 2 out");
