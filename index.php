@@ -46,19 +46,19 @@
 
         if($_POST['btn-cmd'] == "up"){
           $gpio_up = shell_exec("/usr/local/bin/gpio write 0 1");
-          sleep (1.5);
+          sleep (1);
           $gpio_up = shell_exec("/usr/local/bin/gpio write 0 0");
         }
 
         if($_POST['btn-cmd'] == "stop"){
           $gpio_up = shell_exec("/usr/local/bin/gpio write 2 1");
-          sleep (1.5);
+          sleep (1);
           $gpio_up = shell_exec("/usr/local/bin/gpio write 2 0");
         }
 
         if($_POST['btn-cmd'] == "down"){
           $gpio_up = shell_exec("/usr/local/bin/gpio write 3 1");
-          sleep (1.5);
+          sleep (1);
           $gpio_up = shell_exec("/usr/local/bin/gpio write 3 0");
         }
       }
