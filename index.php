@@ -26,9 +26,9 @@
     <div class="container">
         <h2 class="text-center">Roll Up Automation</h2>
       <form method="post" action="index.php" class="form-signin">
-          <button class="btn btn-lg btn-success btn-block" value="up" name="up" type="submit">Up</button>
-          <button class="btn btn-lg btn-danger btn-block" value="stop" name="stop" type="submit">Stop</button>
-          <button class="btn btn-lg btn-primary btn-block" value="down" name="down" type="submit">Down</button>
+          <button class="btn btn-lg btn-success btn-block" value="up" name="btn-cmd" type="submit">Up</button>
+          <button class="btn btn-lg btn-danger btn-block" value="stop" name="btn-cmd" type="submit">Stop</button>
+          <button class="btn btn-lg btn-primary btn-block" value="down" name="btn-cmd" type="submit">Down</button>
       </form>
 
     </div> <!-- /container -->
@@ -43,19 +43,19 @@
       $setmode2 = shell_exec("/usr/local/bin/gpio -g mode 2 out");
       $setmode3 = shell_exec("/usr/local/bin/gpio -g mode 3 out");
 
-      if(isset($_POST['up'])){
+      if(isset($_POST['btn-cmd'] == "up")){
         $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 1");
         sleep (0.5);
         $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 0");
       }
 
-      if(isset($_POST['stop'])){
+      if(isset($_POST['btn-cmd'] == "stop")){
         $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 1");
         sleep (0.5);
         $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 0");
       }
 
-      if(isset($_POST['down'])){
+      if(isset($_POST['btn-cmd'] == "down")){
         $gpio_up = shell_exec("/usr/local/bin/gpio -g write 3 1");
         sleep (0.5);
         $gpio_up = shell_exec("/usr/local/bin/gpio -g write PDF_create_3dview(pdfdoc, username, optlist) 0");
