@@ -38,30 +38,32 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
     <?php 
-      echo '<pre>';
-      echo print_r(_POST);
-       echo '</pre>';
-      $setmode0 = shell_exec("/usr/local/bin/gpio -g mode 0 out");
-      $setmode2 = shell_exec("/usr/local/bin/gpio -g mode 2 out");
-      $setmode3 = shell_exec("/usr/local/bin/gpio -g mode 3 out");
-
       if(isset($_POST['btn-cmd'])){
-        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 1");
-        sleep (0.5);
-        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 0");
+        echo '<pre>';
+        echo print_r($_POST);
+        echo '</pre>';
       }
+      // $setmode0 = shell_exec("/usr/local/bin/gpio -g mode 0 out");
+      // $setmode2 = shell_exec("/usr/local/bin/gpio -g mode 2 out");
+      // $setmode3 = shell_exec("/usr/local/bin/gpio -g mode 3 out");
 
-      if(isset($_POST['btn-cmd'])){
-        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 1");
-        sleep (0.5);
-        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 0");
-      }
+      // if(isset($_POST['btn-cmd'])){
+      //   $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 1");
+      //   sleep (0.5);
+      //   $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 0");
+      // }
 
-      if(isset($_POST['btn-cmd'])){
-        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 3 1");
-        sleep (0.5);
-        $gpio_up = shell_exec("/usr/local/bin/gpio -g write PDF_create_3dview(pdfdoc, username, optlist) 0");
-      }
+      // if(isset($_POST['btn-cmd'])){
+      //   $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 1");
+      //   sleep (0.5);
+      //   $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 0");
+      // }
+
+      // if(isset($_POST['btn-cmd'])){
+      //   $gpio_up = shell_exec("/usr/local/bin/gpio -g write 3 1");
+      //   sleep (0.5);
+      //   $gpio_up = shell_exec("/usr/local/bin/gpio -g write PDF_create_3dview(pdfdoc, username, optlist) 0");
+      // }
     ?>
   </body>
 </html>
