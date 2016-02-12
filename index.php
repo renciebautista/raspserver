@@ -43,28 +43,28 @@
         // echo print_r($_POST);
         // echo '</pre>';
 
-        $setmode0 = shell_exec("/usr/local/bin/gpio -g mode 0 out");
-        $setmode2 = shell_exec("/usr/local/bin/gpio -g mode 2 out");
-        $setmode3 = shell_exec("/usr/local/bin/gpio -g mode 3 out");
+        $setmode0 = shell_exec("/usr/local/bin/gpio mode 0 out");
+        $setmode2 = shell_exec("/usr/local/bin/gpio mode 2 out");
+        $setmode3 = shell_exec("/usr/local/bin/gpio mode 3 out");
 
         if($_POST['btn-cmd'] == "up"){
-          $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 1");
+          $gpio_up = shell_exec("/usr/local/bin/gpio write 0 1");
           sleep (0.5);
-          $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 0");
+          $gpio_up = shell_exec("/usr/local/bin/gpio write 0 0");
           echo 'up';
         }
 
         if($_POST['btn-cmd'] == "stop"){
-          $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 1");
+          $gpio_up = shell_exec("/usr/local/bin/gpio write 2 1");
           sleep (0.5);
-          $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 0");
+          $gpio_up = shell_exec("/usr/local/bin/gpio write 2 0");
           echo 'stop';
         }
 
         if($_POST['btn-cmd'] == "down"){
-          $gpio_up = shell_exec("/usr/local/bin/gpio -g write 3 1");
+          $gpio_up = shell_exec("/usr/local/bin/gpio write 3 1");
           sleep (0.5);
-          $gpio_up = shell_exec("/usr/local/bin/gpio -g write PDF_create_3dview(pdfdoc, username, optlist) 0");
+          $gpio_up = shell_exec("/usr/local/bin/gpio write 3 0");
           echo 'down';
         }
       }
