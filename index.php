@@ -25,10 +25,10 @@
 
     <div class="container">
         <h2 class="text-center">Roll Up Automation</h2>
-      <form class="form-signin">
-        <button class="btn btn-lg btn-success btn-block" type="submit">Up</button>
-         <button class="btn btn-lg btn-danger btn-block" type="submit">Stop</button>
-          <button class="btn btn-lg btn-primary btn-block" type="submit">Down</button>
+      <form method="post" action="index.php" class="form-signin">
+          <button class="btn btn-lg btn-success btn-block" value="up" name="up" type="submit">Up</button>
+          <button class="btn btn-lg btn-danger btn-block" value="stop" name="stop" type="submit">Stop</button>
+          <button class="btn btn-lg btn-primary btn-block" value="down" name="down" type="submit">Down</button>
       </form>
 
     </div> <!-- /container -->
@@ -36,5 +36,29 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <?php 
+      $setmode0 = shell_exec("/usr/local/bin/gpio -g mode 0 out");
+      $setmode2 = shell_exec("/usr/local/bin/gpio -g mode 2 out");
+      $setmode3 = shell_exec("/usr/local/bin/gpio -g mode 3 out");
+
+      if(isset($_POST['up'])){
+        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 1");
+        sleep (0.5);
+        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 0 0");
+      }
+
+      if(isset($_POST['stop'])){
+        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 1");
+        sleep (0.5);
+        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 2 0");
+      }
+
+      if(isset($_POST['down'])){
+        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 3 1");
+        sleep (0.5);
+        $gpio_up = shell_exec("/usr/local/bin/gpio -g write 3 0");
+      }
+    ?>
   </body>
 </html>
